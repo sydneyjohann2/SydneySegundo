@@ -151,13 +151,26 @@ VALUES
     (9, 9, 109),  -- Leomord has Blade Armor
     (10, 10, 110);  -- Chou has Feather of Heaven
     
+--3.	Create new branch named "feat/add-column-price"
+
+-- Adding another column
 ALTER TABLE Item
 ADD item_price DECIMAL (10,2);
 
+--4	Create new branch named "feat/update-delete-inactive"
+
+-- Update the state of Hero 1 to inactive
 UPDATE Hero
 SET is_active = 'false'
 WHERE hero_id = 1;
 
+-- Deleting items associated with Hero 1
+DELETE FROM HeroItem 
+WHERE hero_id = 1;
+
+--5	Create new branch named "feat/select-active-players"
+
+-- Selecting players and their heroes that are actively use
 SELECT p.player_name, h.hero_name
 FROM Player p
 JOIN Hero h ON p.hero_id = h.hero_id
