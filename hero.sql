@@ -151,3 +151,8 @@ VALUES
     (9, 9, 109),  -- Leomord has Blade Armor
     (10, 10, 110);  -- Chou has Feather of Heaven
     
+--3. Create new branch named "feat/add-column-price"
+
+-- Adding another column
+ALTER TABLE Item
+ADD item_price DECIMAL (10,2);
