@@ -151,17 +151,3 @@ VALUES
     (9, 9, 109),  -- Leomord has Blade Armor
     (10, 10, 110);  -- Chou has Feather of Heaven
     
-ALTER TABLE Item
-ADD item_price DECIMAL (10,2);
-
-UPDATE Hero
-SET is_active = 'false'
-WHERE hero_id = 1;
-
-DELETE FROM HeroItem 
-WHERE hero_id = 1;
-
-SELECT p.player_name, h.hero_name
-FROM Player p
-JOIN Hero h ON p.hero_id = h.hero_id
-WHERE h.is_active = 'true';
